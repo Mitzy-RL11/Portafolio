@@ -1,0 +1,654 @@
+@charset "utf-8";
+
+/* ===== VARIABLES DE COLOR (Elegante: Lilas, Dorados y Blancos) ===== */
+:root {
+  --blanco: #FFFFFF;
+  --lila-muy-claro: #F4F0FA; /* Fondo principal */
+  --lila-suave: #D1C4E9;     /* Acentos suaves */
+  --lila-oscuro: #5E4B8A;    /* Textos principales y barras */
+  --dorado: #D4AF37;         /* Detalles elegantes y botones */
+  --dorado-hover: #B5952F;
+  --texto-gris: #4A4A4A;
+}
+
+/* ===== BASE ===== */
+html {
+  scroll-behavior: smooth; /* Hace que el salto de anclas sea fluido */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--lila-muy-claro);
+  color: var(--texto-gris);
+  padding-top: 80px; /* Espacio para que el header fijo no tape el contenido */
+  padding-bottom: 70px; /* Espacio para el footer fijo */
+}
+
+/* ===== HEADER (BARRA FIJA) ===== */
+.barra-superior {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--blanco);
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 10px rgba(94, 75, 138, 0.1);
+  border-bottom: 2px solid var(--dorado);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--dorado);
+}
+
+.barra-superior h1 {
+  font-size: 1.5rem;
+  color: var(--lila-oscuro);
+  margin: 0;
+  font-weight: 600;
+}
+
+/* ===== MENÚ ===== */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: var(--lila-oscuro);
+  font-weight: bold;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.menu li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--dorado);
+  transition: width 0.3s;
+}
+
+.menu li a:hover {
+  color: var(--dorado);
+}
+
+.menu li a:hover::after {
+  width: 100%;
+}
+
+/* ===== SECCIONES GENERALES ===== */
+.seccion {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: var(--blanco);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  border-left: 4px solid var(--dorado);
+}
+
+.titulo-seccion {
+  text-align: center;
+  color: var(--lila-oscuro);
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* ===== INICIO (ACERCA DE MÍ) ===== */
+.acerca-de-mi h2 {
+  color: var(--lila-oscuro);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+.texto-perfil p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== PROYECTOS ===== */
+.sub-seccion {
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--lila-suave);
+}
+
+.sub-seccion:last-child {
+  border-bottom: none;
+}
+
+.sub-seccion h3 {
+  color: var(--dorado);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Guionismo */
+.botones-guiones {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.botones-guiones button {
+  background: var(--lila-oscuro);
+  border: 1px solid var(--dorado);
+  color: var(--blanco);
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.botones-guiones button:hover {
+  background: var(--dorado);
+  color: var(--blanco);
+  transform: translateY(-2px);
+}
+
+iframe {
+  border: 2px solid var(--lila-suave);
+  border-radius: 8px;
+}
+
+/* Cortometrajes (Grid) */
+.grid-cortos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.video-proyecto {
+  display: flex;
+  gap: 1.5rem;
+  background: var(--lila-muy-claro);
+  padding: 1rem;
+  border-radius: 12px;
+  align-items: center;
+}
+.pantalla {
+  flex: 1.5;
+}
+.pantalla iframe, .pantalla video {
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+  border: none;
+}
+.descripcion {
+  flex: 1;
+}
+.descripcion h4 {
+  color: var(--lila-oscuro);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+/* Animaciones */
+.grid-animacion {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.card {
+  background: var(--blanco);
+  border: 1px solid var(--lila-suave);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.thumb img, .thumb video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: #000;
+}
+.meta {
+  padding: 1rem;
+}
+.meta h4 {
+  color: var(--lila-oscuro);
+  margin: 0 0 5px 0;
+}
+
+/* ===== HERRAMIENTAS ===== */
+.grid-herramientas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+.cuadro {
+  display: flex;
+  gap: 1.5rem;
+  background: var(--lila-muy-claro);
+  padding: 1.5rem;
+  border-radius: 12px;
+  align-items: center;
+}
+.cuadro img {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid var(--dorado);
+}
+.lista-herramientas h4 {
+  color: var(--lila-oscuro);
+  margin-top: 0;
+}
+.lista-herramientas ul {
+  list-style: none;
+  padding: 0;
+}
+.lista-herramientas li {
+  background: var(--blanco);
+  margin-bottom: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  border-left: 3px solid var(--dorado);
+}
+
+/* ===== FOOTER MEJORADO ===== */
+.redes-fijas {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--lila-oscuro);
+  color: var(--blanco);
+  padding: 1.2rem 0;
+  border-top: 3px solid var(--dorado);
+  z-index: 1000;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around; /* Distribuye espacio entre contacto e iconos */
+  align-items: center;
+  flex-wrap: wrap; /* Para que se ajuste en pantallas pequeñas */
+  gap: 1rem;
+}
+
+.info-contacto {
+  font-size: 0.9rem;
+  color: var(--blanco);
+}
+
+.info-contacto a {
+  color: var(--dorado);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.info-contacto a:hover {
+  text-decoration: underline;
+}
+
+.iconos {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.iconos a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.iconos a:hover {
+  color: var(--dorado);
+}
+
+
+
+
+/* Contenedor principal para alinear tarjeta y texto */
+.contenedor-identidad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 10vh;
+}
+
+/* Efecto Flip 3D */
+.tarjeta-flip {
+  background-color: transparent;
+  width: 250px;
+  height: 350px;
+  perspective: 1000px;
+}
+
+.tarjeta-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.tarjeta-flip:hover .tarjeta-inner {
+  transform: rotateY(180deg);
+}
+
+.tarjeta-frente, .tarjeta-atras {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #c9a227; /* Dorado */
+}
+
+.tarjeta-frente img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+
+.tarjeta-atras {
+  background: #4e342e;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 20px;
+  text-align: center;
+  flex-direction: column;
+}
+
+/* Estilos de texto PORTAFOLIO */
+.texto-identidad h1 {
+  font-size: 4rem;
+  color: #c9a227;
+  margin: 0;
+  letter-spacing: 5px;
+}
+
+.linea-dorada {
+  width: 100%;
+  height: 3px;
+  background: #c9a227;
+  margin: 10px 0;
+}
+
+.subtitulo {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+
+/* Botones circulares */
+.contenedor-botones {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.btn-circular {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #D4AF37;
+  background: transparent;
+  color: #5E4B8A;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-circular:hover { background: #D4AF37; color: white; }
+
+/* Modales */
+.modal-fondo {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-contenido {
+  background: white;
+  width: 85%; height: 85%;
+  margin: 2% auto;
+  padding: 30px;
+  border-radius: 15px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.cerrar {
+  position: absolute;
+  top: 10px; right: 20px;
+  font-size: 40px;
+  cursor: pointer;
+  color: #5E4B8A;
+}
+
+/* Estilo del contenedor de la lista de cortos */
+.lista-cortos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Cada fila (caja horizontal) */
+.caja-corto {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Divide en 2 partes iguales: Video | Texto */
+  gap: 30px;
+  background: #F4F0FA; /* Lila muy claro */
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #D1C4E9;
+  align-items: center;
+}
+
+/* El video a la izquierda */
+.video-item iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+}
+
+/* El texto a la derecha */
+.texto-item {
+  text-align: left;
+  padding: 10px;
+}
+
+.texto-item h4 {
+  color: #5E4B8A; /* Lila oscuro */
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.texto-item p {
+  color: #4A4A4A;
+  font-size: 1.1rem;
+}
+
+/* Ajustes para el contenido del modal de animación */
+.pantalla-reel { display: flex; gap: 20px; margin-bottom: 30px; align-items: center; }
+.video-box { flex: 1; }
+.video-box video { width: 100%; border-radius: 8px; }
+
+.grid { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 15px; 
+  margin-bottom: 30px; 
+}
+.card { background: #f9f9f9; padding: 10px; border-radius: 8px; border: 1px solid #ddd; }
+.card .thumb img, .card .thumb video { width: 100%; height: 150px; object-fit: cover; border-radius: 5px; }
+
+.herramientas .cuadro { display: flex; gap: 20px; background: #f4f0fa; padding: 20px; border-radius: 10px; }
+.lista-herramientas { list-style: none; padding: 0; }
+.lista-herramientas li { margin-bottom: 5px; font-weight: bold; }
+
+
+/* Contenedor especial para el blog (más ancho) */
+.modal-contenido-blog {
+  background: white;
+  width: 95%; /* Ocupa casi toda la pantalla */
+  height: 90%;
+  margin: 2% auto;
+  padding: 10px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden; /* Evita barras de desplazamiento dobles */
+}
+
+/* El visor del blog */
+.visor-blog {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Descripción destacada */
+.descripcion-gestion {
+  font-size: 1.2rem;
+  color: #5E4B8A;
+  margin-bottom: 30px;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Contenedor Flex para dividir en dos columnas */
+.contenedor-perfiles {
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+/* Estilo de cada tarjeta de perfil */
+.perfil {
+  background: #f4f0fa;
+  padding: 25px;
+  border-radius: 15px;
+  width: 45%;
+  text-align: center;
+  border: 1px solid #D4AF37;
+}
+
+.perfil h4 {
+  color: #D4AF37;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.perfil p {
+  margin: 5px 0;
+  color: #333;
+}
+
+/* Contenedor principal */
+.seccion-herramientas { padding: 50px 20px; text-align: center; background: #fdfdfd; }
+
+.grid-herramientas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.categoria {
+  background: rgba(244, 240, 250, 0.6); /* Lila muy suave */
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid #D4AF37; /* Dorado */
+}
+
+.categoria h4 { color: #5E4B8A; margin-bottom: 20px; font-size: 1.2rem; }
+
+.iconos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* El estilo de los "botones" de herramientas */
+.item {
+  background: #5E4B8A;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+/* Efecto creativo: Se expande y cambia a color dorado */
+.item:hover {
+  transform: translateY(-5px) scale(1.1);
+  background: #D4AF37;
+  color: #5E4B8A;
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+
+
+/* Botón llamativo dentro de los perfiles */
+.btn-llamativo {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 15px;
+  background: transparent;
+  border: 2px solid #D4AF37; /* Dorado */
+  color: #5E4B8A; /* Lila oscuro */
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btn-llamativo:hover {
+  background: #D4AF37;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.4);
+}

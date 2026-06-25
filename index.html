@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> | Portafolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- BARRA DE NAVEGACIÓN FIJA -->
+  <header class="barra-superior">
+    <div class="logo-container">
+      <img src="yo.jpeg" alt="Logo Mitzy" class="logo" />
+      <h1>Mitzy Rodriguez</h1>
+    </div>
+    <nav>
+      <ul class="menu">
+        <li><a href="#inicio">Acerca de mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#herramientas">Herramientas Digitales</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main>
+    
+    <!-- SECCIÓN: INICIO (Acerca de mí) -->
+    <main class="contenido-principal">
+  <div class="contenedor-identidad">
+    
+    <div class="tarjeta-flip">
+      <div class="tarjeta-inner">
+        <div class="tarjeta-frente">
+          <img src="yo.jpeg" alt="Mitzy Rodriguez">
+        </div>
+        <div class="tarjeta-atras">
+          <h3>Sobre mí</h3>
+          <p>Tengo 21 años, especialista en creacion de contenido para redes sociales, animación 2D/3D y narrativa visual. Fusiono técnica y creatividad para contar historias memorables.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="texto-identidad">
+      <h1>PORTAFOLIO</h1>
+      <div class="linea-dorada"></div>
+      <p class="subtitulo">Mitzy Rodriguez</p>
+    </div>
+  </div>
+</main>
+
+    <!-- SECCIÓN: PROYECTOS -->
+    <section id="proyectos" class="seccion">
+  <h2 class="titulo-seccion">Proyectos</h2>
+  
+  <!-- BOTONES CIRCULARES -->
+  <div class="contenedor-botones">
+    <button onclick="abrirModal('modal-guionismo')" class="btn-circular">Guionismo</button>
+    <button onclick="abrirModal('modal-cortos')" class="btn-circular">Cortos</button>
+    <button onclick="abrirModal('modal-animacion')" class="btn-circular">Animación</button>
+    <button onclick="abrirModal('modal-blog')" class="btn-circular">Blog</button>
+    <button onclick="abrirModal('modal-redes')" class="btn-circular">Redes</button>
+  </div>
+
+  <!-- MODAL GUIONISMO -->
+  <div id="modal-guionismo" class="modal-fondo">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarModal('modal-guionismo')">&times;</span>
+      <h3>Guionismo</h3>
+      <div class="visor">
+        <div class="botones-guiones">
+          <button onclick="cargarGuion('FUI_YO_GUION_FINAL.pdf')">¿Fui yo?</button>
+          <button onclick="cargarGuion('ENTRE NOTAS.pdf')">Entre notas</button>
+          <button onclick="cargarGuion('RAMASDELTIEMPO.pdf')">Ramas del tiempo</button>
+        </div>
+        <iframe id="visorPDF" src="portada.pdf" width="100%" height="500px"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL CORTOMETRAJES -->
+<div id="modal-cortos" class="modal-fondo">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarModal('modal-cortos')">&times;</span>
+    <h3>Cortometrajes</h3>
+    
+    <div class="lista-cortos">
+      
+      <!-- Video 1 -->
+      <div class="caja-corto">
+        <div class="video-item"><iframe src="https://www.youtube.com/embed/-hdMEIz6t3k" frameborder="0" allowfullscreen></iframe></div>
+        <div class="texto-item">
+          <h4>Artefacto</h4>
+          <p>Productora</p>
+        </div>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="caja-corto">
+        <div class="video-item"><iframe src="https://www.youtube.com/embed/B3D6A6Aq2is" frameborder="0" allowfullscreen></iframe></div>
+        <div class="texto-item">
+          <h4>Intrusion</h4>
+          <p>Coordinadora, Editora, Arte, Guionista</p>
+        </div>
+      </div>
+
+      <!-- Video 3 -->
+      <div class="caja-corto">
+        <div class="video-item"><iframe src="https://www.youtube.com/embed/PVpWVgS-AdA" frameborder="0" allowfullscreen></iframe></div>
+        <div class="texto-item">
+          <h4>Entre Notas</h4>
+          <p>Guionista, Directora de Continuidad, Gaffer, Audio</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  
+  <!-- MODAL ANIMACIÓN Y MODELADOS -->
+<div id="modal-animacion" class="modal-fondo">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarModal('modal-animacion')">&times;</span>
+    <h3>Animación y Modelados</h3>
+
+
+    <!-- Galería de Piezas -->
+    <section class="galeria">
+  <h4>Piezas destacadas</h4>
+  <div class="grid">
+    <!-- Tus piezas originales -->
+    <article class="card">
+      <div class="thumb"><img src="oso.jpeg" alt="Osito"></div>
+      <div class="meta"><h4>Osito</h4><p>Modelado 3D, low-poly</p></div>
+    </article>
+    <article class="card">
+      <div class="thumb"><img src="hada.jpeg" alt="Hada"></div>
+      <div class="meta"><h4>Hada</h4><p>Modelado 3D, texturizado</p></div>
+    </article>
+    <article class="card">
+      <div class="thumb"><video src="caminata.mp4" controls></video></div>
+      <div class="meta"><h4>Caminata</h4><p>Modelado 2D</p></div>
+    </article>
+
+    <!-- Tus nuevas piezas -->
+    <article class="card">
+      <div class="thumb"><img src="payaso.jpeg" alt="Payaso"></div>
+      <div class="meta"><h4>Payaso</h4><p>Modelado 3D (Juego de terror)</p></div>
+    </article>
+    <article class="card">
+      <div class="thumb"><img src="tennis.jpeg" alt="Tennis"></div>
+      <div class="meta"><h4>Tennis</h4><p>Modelado 3D, texturizado</p></div>
+    </article>
+    <article class="card">
+      <div class="thumb"><img src="mitzy.jpeg" alt="Mitzy"></div>
+      <div class="meta"><h4>Mitzy</h4><p>Renderizado de personaje</p></div>
+    </article>
+  </div>
+</section>
+
+    <!-- Herramientas -->
+    <section class="herramientas">
+      <h4>Herramientas de animación</h4>
+      <div class="cuadro">
+        <img src="apps2.jpeg" alt="Herramientas">
+        <ul class="lista-herramientas">
+          <li>After Effects — motion y compositing</li>
+          <li>Photoshop/Illustrator — arte y assets</li>
+          <li>Blender — 3D, cámaras y shading</li>
+          <li>Animate — Animación 2D</li>
+          <li>3D MAX — 3D, cámaras</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>
+
+ 
+ <!-- MODAL BLOG: LATIDO EFÍMERO -->
+<div id="modal-blog" class="modal-fondo">
+  <div class="modal-contenido-blog">
+    <span class="cerrar" onclick="cerrarModal('modal-blog')">&times;</span>
+    <h3>Latido Efímero</h3>
+    
+    <!-- Iframe para visualización en tiempo real -->
+    <iframe 
+      src="https://latidoefimero.blogspot.com" 
+      title="Latido Efímero"
+      class="visor-blog">
+    </iframe>
+  </div>
+</div>
+
+		
+	<!-- MODAL REDES -->
+<div id="modal-redes" class="modal-fondo">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarModal('modal-redes')">&times;</span>
+    <h3>Dirección y Contenido para Redes</h3>
+    
+    <!-- Descripción de gestión -->
+    <p class="descripcion-gestion">
+      Creo y gestiono contenido para artistas emergentes, trabajando de la mano con los talentos principales:
+    </p>
+
+    <!-- Contenedor de perfiles -->
+   <!-- Contenedor de perfiles -->
+<div class="contenedor-perfiles">
+  
+  <!-- Lado Izquierdo: Tu info (Monchis) -->
+  <div class="perfil">
+    <h4>Me dicen Monchis</h4>
+    <p><strong>Instagram:</strong> @_nosdicenmonchis</p>
+    <p><strong>TikTok:</strong> @medicenjos</p>
+    <!-- Botón Club de Fans -->
+    <a href="https://vt.tiktok.com/ZSCYKATrd/" target="_blank" class="btn-llamativo">Nos dicen monchis</a>
+  </div>
+
+  <!-- Lado Derecho: Info Sofía (Jos) -->
+  <div class="perfil">
+    <h4>Sofía Zavala</h4>
+    <p><strong>Instagram:</strong> @sofiazavala_</p>
+    <p><strong>TikTok:</strong> @pazavalear.tk</p>
+    <!-- Botón Club de Fans -->
+    <a href="https://vt.tiktok.com/ZSCYKaPAm/" target="_blank" class="btn-llamativo">Pa zavalear</a>
+  </div>
+
+</div>
+  </div>
+</div>	
+		
+<section id="herramientas" class="seccion-herramientas">
+  <h3>Mi Caja de Herramientas Creativas</h3>
+  <div class="grid-herramientas">
+    
+    <!-- Categoría: Edición y Audio -->
+    <div class="categoria">
+      <h4>Post-Producción & Audio</h4>
+      <div class="iconos">
+        <div class="item">Premiere Pro</div>
+        <div class="item">After Effects</div>
+        <div class="item">Audition</div>
+        <div class="item">DaVinci</div>
+      </div>
+    </div>
+
+    <!-- Categoría: 3D y Motores -->
+    <div class="categoria">
+      <h4>3D, Animación & Motores</h4>
+      <div class="iconos">
+        <div class="item">Blender</div>
+        <div class="item">Maya</div>
+        <div class="item">3D Max</div>
+        <div class="item">Unity</div>
+        <div class="item">Mixamo</div>
+      </div>
+    </div>
+
+    <!-- Categoría: Diseño y Guionismo -->
+    <div class="categoria">
+      <h4>Arte, Web & Guion</h4>
+      <div class="iconos">
+        <div class="item">Photoshop</div>
+        <div class="item">Illustrator</div>
+        <div class="item">Dreamweaver</div>
+        <div class="item">Celtx</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+		
+		
+  </main>
+
+  <!-- FOOTER (CONTÁCTAME) -->
+<footer id="contacto" class="redes-fijas">
+  <div class="footer-content">
+    <div class="info-contacto">
+      <p><strong>¿Quieres colaborar?</strong></p>
+      <a href="mitzyloyo0@gmail.com">mitzyloyo0@gmail.com</a> | 
+      <span>+52 55 88205879</span>
+    </div>
+    
+    <div class="iconos">
+      <a href="https://www.instagram.com/mity_loyo?igsh=MXNvNTBxcHg4MWN6YQ==" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/@MitzyLoyo" target="_blank">YouTube</a>
+      <a href="https://vt.tiktok.com/ZSCYKdYfc/" target="_blank">TikTok</a>
+      <a href="https://wa.me/qr/XR36K25UHBU5J1" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+  <!-- Script para cambiar PDFs -->
+  <script>
+    function cargarGuion(archivo) {
+      document.getElementById('visorPDF').src = archivo;
+    }
+  </script>
+</body>
+</html>
+
+
+<script>
+  function abrirModal(id) {
+    document.getElementById(id).style.display = 'block';
+  }
+  function cerrarModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+  // Cerrar al hacer clic fuera
+  window.onclick = function(event) {
+    if (event.target.className === 'modal-fondo') {
+      event.target.style.display = 'none';
+    }
+  }
+</script>
